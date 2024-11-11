@@ -9,7 +9,7 @@ repository = "https://github.com/ipqwery/ipapi"
 homepage = "https://github.com/ipqwery/ipapi"
 documentation = "https://docs.rs/ipapi"
 keywords = ["ip", "query", "ipquery", "networking", "api"]
-categories = ["network-programming", "data-access"]
+categories = ["network-programming"]
 readme = "README.md"
 
 [dependencies]
