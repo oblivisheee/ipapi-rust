@@ -2,6 +2,7 @@
 name = "ipapi"
 version = "0.1.0"
 authors = ["IPQuery <admin@ipquery.io>"]
+edition = "2021"
 description = "A Rust library to query IP addresses using ipquery.io API"
 license = "MIT"
 repository = "https://github.com/ipqwery/ipapi"
