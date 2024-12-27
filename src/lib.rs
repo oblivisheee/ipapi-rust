@@ -27,6 +27,7 @@
 #[cfg(feature = "error")]
 pub use reqwest::Error;
 
+#[cfg(not(feature = "error"))]
 use reqwest::Error;
 use serde::{Deserialize, Serialize};
 
