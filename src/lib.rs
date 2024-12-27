@@ -173,3 +173,21 @@ pub async fn query_own_ip() -> Result<String, Error> {
     let response = reqwest::get(BASE_URL).await?.text().await?;
     Ok(response)
 }
+
+pub async fn query_ip_with_endpoint(ip: &str, endpoint: &str) -> Result<IPInfo, Error> {
+    let url = format!("{}{}", endpoint, ip);
+    let response = reqwest::get(&url).await?.json::<IPInfo>().await?;
+    Ok(response)
+}
+
+pub async fn query_bulk_with_endpoint(ips: &[&str], endpoint: &str) -> Result<Vec<IPInfo>, Error> {
+    let ip_list = ips.join(",");
+    let url = format!("{}{}", endpoint, ip_list);
+    let response = reqwest::get(&url).await?.json::<Vec<IPInfo>>().await?;
+    Ok(response)
+}
+
+pub async fn query_own_ip_with_endpoint(endpoint: &str) -> Result<String, Error> {
+    let response = reqwest::get(endpoint).await?.text().await?;
+    Ok(response)
+}
