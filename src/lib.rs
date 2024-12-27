@@ -24,7 +24,11 @@
 //! ## License
 //! This project is licensed under the MIT License.
 
+#[cfg(feature = "error")]
+pub use reqwest::Error;
+
 use reqwest::Error;
+#[cfg(not(feature = "error"))]
 use serde::{Deserialize, Serialize};
 
 /// The base URL for the ipquery.io API.
