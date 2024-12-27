@@ -24,7 +24,9 @@
 //! ## License
 //! This project is licensed under the MIT License.
 
-pub use reqwest::Error;
+use reqwest::Error as ReqwestError;
+pub type Error = ReqwestError;
+
 use serde::{Deserialize, Serialize};
 
 /// The base URL for the ipquery.io API.
